@@ -14,6 +14,7 @@ const { test, expect } = require('@playwright/test');
 
 test.beforeAll(async() => {
     console.log("------beforeAll hook-----")
+    console.log('worker' + process.env.TEST_WORKER_INDEX);
 })
 
 test.beforeEach(async({page}) => {

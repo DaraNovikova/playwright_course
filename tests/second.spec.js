@@ -2,11 +2,12 @@ const { test, expect } = require('@playwright/test');
 
 test.beforeEach(async({page}) => {
     await page.goto('/#/login');
+    console.log('worker' + process.env.TEST_WORKER_INDEX);
 })
 
 // test.use({viewport:{width:600, height:900}})
 
-test('second basic test', async({page})=>{
+test('basic test - 2', async({page})=>{
     await expect(page).toHaveTitle('Conduit')
 
     await page.fill('input[type = "email"]', 'qacamp.acad@gmail.com');
